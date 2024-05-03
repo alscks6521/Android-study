@@ -1,4 +1,48 @@
-# 기초복습 AndroidStudioProjects
+# 복습 AndroidStudioProjects  
+## 중요포인트💡  
+### 디자인패턴 MVVM ( Model-View-ViewModel )  
+<img height="10%" alt="image" src="https://github.com/alscks6521/Android-study/assets/112923685/e86b70e2-6e16-4555-a164-b2497cb675a7">  
+
+### View(UI 레이어):  
+
+UI 컴포넌트들로 구성 (예: Activity, Fragment, XML 레이아웃 등)  
+
+사용자의 액션이나 이벤트를 받아들이고, 이를 ViewModel에 전달한다.  
+
+ViewModel의 상태 변화를 관찰(Observer)하고 있다가, 변경사항이 발생하면 그에 따라 UI를 업데이트한다.  
+
+UI 로직을 포함하지만, 비즈니스 로직은 포함하지 않는다.  
+
+### Model(프레젠테이션 레이어):  
+앱의 데이터와 관련된 로직을 담당 및 데이터의 상태와 조작 방법을 정의한다.  
+
+로컬 데이터베이스, 원격 서버, 파일 시스템 등 다양한 데이터 소스와 상호작용한다.  
+
+Repository 패턴을 사용하여 데이터 소스에 접근하는 로직을 추상화하고, ViewModel에 데이터를 제공한다.  
+
+네트워크 요청, 데이터베이스 쿼리, 파일 I/O 등의 작업을 수행
+
+### ViewModel:
+Flutter의 GetX 라이브러리와 MVVM 패턴의 ViewModel은 유사한 역할을 한다.  
+
+View와 Model 사이의 중개자 역할을 한다.  
+
+View에 표시될 데이터를 가공하고 관리한다. LiveData나 Observable을 사용하여 데이터를 노출한다.  
+
+사용자 액션이나 이벤트에 대한 로직을 처리하고, 필요한 데이터를 Model에 요청한다.  
+
+Android Jetpack의 ViewModel 클래스를 상속받아 구현하며, 구성 변경(Configuration Changes)에도 데이터를 유지할 수 있다.  
+
+비즈니스 로직을 담당하지만, UI에 대한 직접적인 참조는 가지고 있지 않다.  
+### 정리  
+View는 사용자 인터페이스를 담당하고, 사용자 이벤트를 받아들인다.  
+
+ViewModel은 View와 Model 사이의 중개자 역할을 하며, 데이터를 가공하고 관리한다.  
+
+Model은 앱의 데이터와 관련된 로직을 담당하며, 데이터 소스와 상호작용한다.  
+
+---  
+
 ## 1.0  JAVA, Kotlin
 Q. 자바와 코틀린이 비슷하지만 앱개발을 코틀린으로 하는 이유 : 
 A. 개발자가 개발함에 있어 오류를 발생할 확률이 났다.
@@ -116,5 +160,7 @@ class MainActivity : AppCompatActivity() {
         NotificationManagerCompat.from(this).notify(1, builder.build())
     }
 }
-```
+```  
 
+
+---
